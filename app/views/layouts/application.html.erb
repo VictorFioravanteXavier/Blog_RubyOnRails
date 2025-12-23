@@ -8,6 +8,7 @@
     <%= csp_meta_tag %>
 
     <%= yield :head %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
@@ -21,14 +22,16 @@
 
     <!-- Bootstrap JS (com Popper incluso) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
   </head>
 
   <body>
     
     <%= render "layouts/topNavbar" %>
-
-    <%= yield %>
-    
+    <main class="container">
+      <%= yield %>
+    </main>
     <%= render "layouts/footer"  %>
   </body>
 </html>
