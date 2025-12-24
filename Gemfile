@@ -61,3 +61,5 @@ gem "simple_form", "~> 5.4"
 gem "sassc-rails"
 
 gem "kaminari", "~> 1.2"
+
+gem 'htmlbeautifier'
