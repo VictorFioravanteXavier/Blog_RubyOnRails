@@ -10,15 +10,15 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def index?
-    user&.admin? || user.has_role?(:moderator)
+    user&.admin? || user&.has_role?(:moderator)
   end
 
   def create?
-    user.admin? || user.has_role?(:moderator)
+    user.admin? || user&.has_role?(:moderator)
   end
 
   def update?
-    user.admin? || user.has_role?(:moderator)
+    user.admin? || user&.has_role?(:moderator)
   end
 
   def destroy?
