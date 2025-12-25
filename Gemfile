@@ -20,6 +20,8 @@ group :development, :test do
   gem "brakeman", require: false
 
   gem "rubocop-rails-omakase", require: false
+
+  gem "bullet"
 end
 
 group :development do
