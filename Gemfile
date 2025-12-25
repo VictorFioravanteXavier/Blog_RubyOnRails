@@ -50,3 +50,5 @@ gem "pundit", "~> 2.5"
 gem "rolify", "~> 6.0"
 
 gem 'htmlbeautifier'
+
+gem "groupdate", "~> 6.7"
