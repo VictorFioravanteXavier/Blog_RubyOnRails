@@ -24,11 +24,11 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = if Rails.env.production?
-    ENV.fetch("GMAIL_USER", "no-reply@example.com")
-  else
-    "devise@example.com"
-  end
+  config.mailer_sender = ENV.fetch(
+    "DEFAULT_FROM_EMAIL",
+    "no-reply@blog-rubyonrails-kw21.onrender.com"
+  )
+
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
