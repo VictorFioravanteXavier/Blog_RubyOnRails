@@ -291,6 +291,7 @@ GEM
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
+    ruby_http_client (3.6.0)
     rubyzip (3.2.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -307,6 +308,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
+    sendgrid-ruby (6.7.0)
+      ruby_http_client (~> 3.4)
     simple_form (5.4.0)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
@@ -379,6 +382,7 @@ DEPENDENCIES
   rubocop-rails-omakase
   sassc-rails (~> 2.1)
   selenium-webdriver
+  sendgrid-ruby
   simple_form (~> 5.4)
   sprockets-rails
   sqlite3 (>= 1.4)
@@ -490,11 +494,13 @@ CHECKSUMS
   rubocop-rails (2.34.2) sha256=10ff246ee48b25ffeabddc5fee86d159d690bb3c7b9105755a9c7508a11d6e22
   rubocop-rails-omakase (1.1.0) sha256=2af73ac8ee5852de2919abbd2618af9c15c19b512c4cfc1f9a5d3b6ef009109d
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
+  ruby_http_client (3.6.0) sha256=9308505d3a0421810d2dc012d79d986f7d360d5b02178641190849a22fd279f2
   rubyzip (3.2.2) sha256=c0ed99385f0625415c8f05bcae33fe649ed2952894a95ff8b08f26ca57ea5b3c
   sassc (2.4.0) sha256=4c60a2b0a3b36685c83b80d5789401c2f678c1652e3288315a1551d811d9f83e
   sassc-rails (2.1.2) sha256=5f4fdf3881fc9bdc8e856ffbd9850d70a2878866feae8114aa45996179952db5
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   selenium-webdriver (4.39.0) sha256=984a1e63d39472eaf286bac3c6f1822fa7eea6eed9c07a66ce7b3bc5417ba826
+  sendgrid-ruby (6.7.0) sha256=c9ff96bd37c9d6d3ce39c3c1017ee3cd9d09c155ec6af1b5078d05b5d832d111
   simple_form (5.4.0) sha256=eb1ce5b0ec36ae171f2e2a07ec479ad3eaeb53fa750aa3f775a7cb7b684810ee
   sprockets (4.2.2) sha256=761e5a49f1c288704763f73139763564c845a8f856d52fba013458f8af1b59b1
   sprockets-rails (3.5.2) sha256=a9e88e6ce9f8c912d349aa5401509165ec42326baf9e942a85de4b76dbc4119e
