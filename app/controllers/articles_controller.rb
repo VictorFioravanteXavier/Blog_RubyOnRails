@@ -2,10 +2,11 @@ class ArticlesController < ApplicationController
   include Paginable
 
   before_action :authenticate_user!, except:  %i[ index show ]
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[ edit update destroy ]
+  before_action :set_categories, only: %i[ new create edit update]
   def index
     @categories = Category.sorted
-    category =  @categories.select {|c| c.name == params[:category] }[0] if params[:category].present?
+    category =  @categories.select { |c| c.name == params[:category] }[0] if params[:category].present?
 
     @highlights = Article.includes(:category, :user)
                          .filter_by_category(category)
@@ -25,7 +26,10 @@ class ArticlesController < ApplicationController
     @archives = Article.group_by_month(:created_at, format: "%B %Y").count
   end
 
-  def show; end
+  def show
+    @article = Article.includes(comments: :user).find(params[:id])
+    authorize @article
+  end
 
   def new
     @article = current_user.articles.new
@@ -65,5 +69,9 @@ class ArticlesController < ApplicationController
   def set_article
     @article = Article.find(params[:id])
     authorize @article
+  end
+
+  def set_categories
+    @categories =  Category.sorted
   end
 end
