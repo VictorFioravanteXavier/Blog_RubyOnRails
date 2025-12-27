@@ -11,8 +11,8 @@ class User < ApplicationRecord
          :registerable,
          :rememberable,
          :trackable,
-         :validatable,
-         # :confirmable
+         :validatable
+  # :confirmable
 
   validate :password_complexity
 
