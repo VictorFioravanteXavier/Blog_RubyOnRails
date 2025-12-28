@@ -20,8 +20,8 @@
           <%= category.name %>
         </td>
         <td class="btn-group" role="group">
-          <%= link_to "Edit", edit_category_path(category), class: "btn btn-secondary" if policy(category).edit? %>
-          <%= button_to "Destroy", category_path(category), method: :delete, data:{"turbo-confirm": "Are you sure?"}, class: "btn btn-danger"  if policy(category).destroy?%>
+          <%= link_to "Edit", edit_category_path(category, locale: I18n.locale), class: "btn btn-secondary" if policy(category).edit? %>
+          <%= button_to "Destroy", category_path(category, locale: I18n.locale), method: :delete, data:{"turbo-confirm": "Are you sure?"}, class: "btn btn-danger"  if policy(category).destroy?%>
         </td>
       </tr>
     <% end %>

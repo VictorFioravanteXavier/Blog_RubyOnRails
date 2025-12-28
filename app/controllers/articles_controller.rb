@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
 
     if @article.save
-      redirect_to @article, notice: "Article was successfully created."
+      redirect_to article_path(@article, locale: I18n.locale), notice: "Article was successfully created."
     else
       render :new, status: :unprocessable_entity
     end

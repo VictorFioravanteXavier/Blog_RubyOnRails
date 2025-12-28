@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_path, notice: "Category was successfully created." }
+        format.html { redirect_to categories_path(locale: I18n.locale), notice: "Category was successfully created." }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +37,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to categories_path, notice: "Category was successfully updated.", status: :see_other }
+        format.html { redirect_to categories_path(locale: I18n.locale), notice: "Category was successfully updated.", status: :see_other }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class CategoriesController < ApplicationController
         format.json { head :no_content }
       end
     else
-      redirect_to categories_path, alert: @category.errors.messages[:base][0]
+      redirect_to categories_path(locale: I18n.locale), alert: @category.errors.messages[:base][0]
     end
   end
 

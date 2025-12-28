@@ -6,10 +6,12 @@
 
     <p><%= truncate(article.body, length: 150) %></p>
 
-    <p><%= link_to "Continue Reading ...", article, class: "btn btn-link"%></p>
+    <%= link_to t('articles.continue_reading'),
+        article_path(article, locale: I18n.locale),
+        class: "fw-bold" %>
     <div class="btn-group" role="group" >
-        <%= link_to "Edit", edit_article_path(article), class: "btn btn-primary" if policy(article).update?%>
-        <%= button_to "Destroy", article_path(article), method: :delete, data: { "turbo-confirm": "Are you sure?" }, class: "btn btn-danger" if policy(article).destroy?%>
+        <%= link_to "Edit", edit_article_path(article, locale: I18n.locale), class: "btn btn-primary" if policy(article).update?%>
+        <%= button_to "Destroy", article_path(article, locale: I18n.locale), method: :delete, data: { "turbo-confirm": "Are you sure?" }, class: "btn btn-danger" if policy(article).destroy?%>
     </div>
     
 </article>
