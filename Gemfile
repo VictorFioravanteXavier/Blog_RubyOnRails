@@ -39,7 +39,7 @@ gem "rolify", "~> 6.0"
 gem "groupdate", "~> 6.7"
 
 group :production do
-  gem "pg", "~> 1.2"
+  gem "pg", "~> 1.6"
 end
 
 gem "sendgrid-ruby"
