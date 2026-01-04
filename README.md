@@ -1,4 +1,4 @@
-# Blog para aprender RUby on Rails !
+# Blog para aprender Ruby on Rails !
 Building a blog using Bootstrap 5 with Ruby on Rails 6 in MVC pattern.
 
 This repository is part of the [Curso Ruby on Rails 6 MVC](https://www.youtube.com/watch?v=rCwMlbpC7dU) on YouTube.
