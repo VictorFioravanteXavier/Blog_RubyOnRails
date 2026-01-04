@@ -1,24 +1,94 @@
-# README
+# Blog para aprender RUby on Rails !
+Building a blog using Bootstrap 5 with Ruby on Rails 6 in MVC pattern.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is part of the [Curso Ruby on Rails 6 MVC](https://www.youtube.com/watch?v=rCwMlbpC7dU) on YouTube.
 
-Things you may want to cover:
+<table>
+  <tr>
+    <td>Ruby version</td>
+    <td>
+      3.4.8
+    </td>
+  </tr>
+  <tr>
+    <td>Rails version</td>
+    <td>
+      7.2.3
+    </td>
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>
+      SQLite3 (dev) / PostgreSQL (prod)
+    </td>
+  </tr>
+</table>
 
-* Ruby version
+## Initial settings to run the project
 
-* System dependencies
+```bash
+# clone the project
+git clone https://github.com/VictorFioravanteXavier/Blog_RubyOnRails.git
 
-* Configuration
+# enter the cloned directory
+cd blog_rubyonrials
 
-* Database creation
+# install Ruby on Rails dependencies
+bundle install
 
-* Database initialization
+# install Node dependencies
+yarn install
 
-* How to run the test suite
+# create the development and test databases
+rails db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+# create the tables
+rails db:migrate
 
-* Deployment instructions
+# run the project
+rails s
+```
 
-* ...
+Open the browser at the address `http://localhost:3000`
+
+## Configuration for Production
+
+```bash
+# delete the config/credentials.yml.enc file
+rm config/credentials.yml.enc
+
+# run the command to create credentials and master key (replace 'code' if you don't use VS Code)
+EDITOR="code --wait" bin/rails credentials:edit
+```
+
+Add the information below in the [credentials](https://guides.rubyonrails.org/security.html#custom-credentials) to configure the email used by the Devise
+gem (replace with the values you want):
+
+```yml
+# ... your content above
+
+# GMail
+gmail:
+  mailer_sender: 'Sender <your@email.com>'
+  user_name: your@email.com
+  password: your_password
+
+# or Zoho
+zoho:
+  mailer_sender: 'Sender <your@email.com>'
+  user_name: your@email.com
+  password: your_password
+  domain: your_domain.com.br
+
+exception_recipients: exceptions@example.com
+```
+
+Save and close the `config/credentials.yml.enc` file.
+
+If you want to use another email provider, change it in the file
+`config/environments/production.rb`.
+
+To configure [Exception Notification](https://github.com/smartinez87/exception_notification), change it in the file
+`config/initializers/exception_notification.rb`.
+
+Open the browser at the address [https://blog-rubyonrails-kw21.onrender.com/](https://blog-rubyonrails-kw21.onrender.com/)
